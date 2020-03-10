@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Log;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,10 @@ Route::get('/', function () {
 
 Route::get('/test', function () {
     return view('test', ['name' => 'James']);
+});
+
+Route::get('/testApi', function () {
+    Log::debug("test");
+    $results = DB::select('select name from my_table');
+    return view('test', ['name' => $results]);
 });

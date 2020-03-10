@@ -1,5 +1,9 @@
 <html>
     <body>
-        <h1>Hello, {{ $name }}</h1>
+        <?php
+            foreach($name as $n) {
+                echo "<h1>Hello, $n->name</h1>";
+            }
+        ?>
     </body>
 </html>
